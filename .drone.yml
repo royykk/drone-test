@@ -1,0 +1,16 @@
+kind: pipeline
+type: docker
+name: deployment
+
+platform:
+  arch: amd64
+  os: windows
+
+steps:
+- name: dotnet-build
+  #image: mcr.microsoft.com/dotnet/sdk
+  #image: mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-20H2
+  image: mcr.microsoft.com/dotnet/framework/runtime:4.8
+  #dotnet-framework-runtime:4.8-windowsservercore-ltsc2019
+  commands: 
+      - dotnet --version
